@@ -1,7 +1,7 @@
 export class CreateVehicleDto {
-    brand:string;
+  brand: string;
 
-    model:string;
+  model: string;
 
-    registrationNo:string;
+  registrationNo: string;
 }
