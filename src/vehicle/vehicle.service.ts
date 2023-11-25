@@ -11,13 +11,13 @@ export class VehicleService {
   ) {}
 
   create(createVehicleDto: CreateVehicleDto) {
-    const { brand, registrationNo, model } = createVehicleDto;
-    if (!brand || !registrationNo || !model) {
+    const { brand, registrationNo, vehicleModel } = createVehicleDto;
+    if (!brand || !registrationNo || !vehicleModel) {
       return { errorMessage: 'Invalid request format.' };
     }
     const vehicle = new this.vehicleModel({
       brand,
-      model,
+      vehicleModel,
       registrationNo,
     });
     return vehicle.save();

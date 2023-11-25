@@ -1,3 +1,8 @@
 export class CreateOtpDto {
-    phoneNo: string;
+  phoneNo: string;
+}
+
+export class UpdateOtpDto {
+  phoneNo: string;
+  code: string;
 }
