@@ -3,18 +3,20 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { OTP } from './otp.model';
+import { CreateOtpDto } from './dtos/otp.dto';
 
 @Injectable()
 export class OTPService {
   constructor(@InjectModel(OTP.name) private otpModel: Model<OTP>) {}
 
-  async generateOTP() {
+  async generateOTP(createOtpDto: CreateOtpDto) {
     const otpValue = Math.floor(100000 + Math.random() * 900000).toString();
 
     const expiration = new Date();
     expiration.setMinutes(expiration.getMinutes() + 10);
 
     const otp = new this.otpModel({
+      phoneNo: createOtpDto.phoneNo,
       value: otpValue,
       expiration,
     });

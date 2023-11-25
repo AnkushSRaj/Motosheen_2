@@ -1,14 +1,15 @@
 /* eslint-disable prettier/prettier */
 import { Controller, Get, Post, Body } from '@nestjs/common';
 import { OTPService } from './otp.service';
+import { CreateOtpDto } from './dtos/otp.dto';
 
 @Controller('otp')
 export class OTPController {
   constructor(private readonly otpService: OTPService) {}
 
   @Get('/generate')
-   async generateOTP() {
-    const otp = await this.otpService.generateOTP();
+   async generateOTP(@Body() createOtpDto: CreateOtpDto) {
+    const otp = await this.otpService.generateOTP(createOtpDto);
     return { otp: otp.value };
   }
 

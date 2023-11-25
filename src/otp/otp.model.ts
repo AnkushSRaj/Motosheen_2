@@ -8,13 +8,13 @@ import {  Document } from 'mongoose';
 @Schema({timestamps: true, collection: 'otp'})
 export class OTP extends Document {
   @Prop({required: true})
+  phoneNo: string
+
+  @Prop({required: true})
   value: string;
-  
 
   @Prop({required: true})
   expiration: Date;
-
-  
 }
 
 export const OTPSchema = SchemaFactory.createForClass(OTP);
