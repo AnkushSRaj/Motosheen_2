@@ -4,8 +4,6 @@ import { UsersModule } from './users/users.module';
 import { OTPModule } from './otp/otp.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import {ConfigModule} from '@nestjs/config'
-import { VehicleResolver } from './vehicle/vehicle.resolver';
-import { VehicleModule } from './vehicle/vehicle.module';
 import { VehicleModule } from './vehicle/vehicle.module';
 
 @Module({
@@ -16,6 +14,6 @@ import { VehicleModule } from './vehicle/vehicle.module';
     OTPModule,
     VehicleModule
   ],
-  providers: [VehicleResolver],
+  providers: [],
 })
 export class AppModule {}

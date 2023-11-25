@@ -16,8 +16,8 @@ export class Vehicle extends Document {
   @Prop({required: true})
   brand: string;
 
-  @Prop({required: true})
-  model: string;
+  // @Prop({required: true})
+  // model: string;
 
   @Prop({required: true})
   registrationNo: string;  
